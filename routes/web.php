@@ -24,4 +24,6 @@ Route::group([
     Route::get('event/{imei?}', 'EventController@index')->name('event.index');
     Route::get('clear/{imei?}', 'EventController@clear');
     Route::get('error/{imei?}', 'EventController@error');
+    Route::get('apiList/{imei?}', 'ApiHistoryController@index');
+    Route::get('apiDetail/{id}', 'ApiHistoryController@detail');
 });

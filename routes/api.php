@@ -23,4 +23,5 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Api',
 ], function(){
     Route::post('event', 'EventController@store');
+    Route::post('history', 'ApiHistoryController@store');
 });
