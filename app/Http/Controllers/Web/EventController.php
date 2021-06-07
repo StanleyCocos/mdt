@@ -18,7 +18,7 @@ class EventController extends Controller
     public function clear(Request $request, EventService $service){
         $imei = $request->route('imei', '');
         $service->clear($imei);
-        return redirect()->route('event.index', ['imei'=>$imei]);
+        return redirect()->route('event.index');
     }
 
     public function error(Request $request, EventService $service){

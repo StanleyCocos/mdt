@@ -54,7 +54,7 @@
         </li>
         <li>
             <div style="float: left; margin: 0 auto; height: 50px; background-color: #eeeeee; width: 25%; text-align: center; line-height: 50px;">
-                <a href="/event/{{ $imei }}/error">查看错误事件</a>
+                <a href="/error/{{ $imei }}">查看错误事件</a>
             </div>
         </li>
         <li>
@@ -66,7 +66,7 @@
 
         <li>
             <div style="float: left; margin: 0 auto;  height: 50px; background-color: #eeeeee; width: 25%; text-align: center; line-height: 50px;">
-                <a href="/event/{{ $imei }}/clear">清除设备</a>
+                <a href="/clear/{{ $imei }}">清除设备</a>
             </div>
         </li>
     </ulid>

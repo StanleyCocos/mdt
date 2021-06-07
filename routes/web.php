@@ -22,7 +22,6 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Web',
 ], function (){
     Route::get('event/{imei?}', 'EventController@index')->name('event.index');
-    Route::get('event/{imei}/clear', 'EventController@clear');
-    Route::get('event/{imei}/error', 'EventController@error');
-//    Route::get('event/{imei?}', 'EventController@index');
+    Route::get('clear/{imei?}', 'EventController@clear');
+    Route::get('error/{imei?}', 'EventController@error');
 });
