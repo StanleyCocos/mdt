@@ -85,7 +85,7 @@
 
     @foreach ($data as $item)
         <tr align="center">
-            <td style="font-weight: bold">{{ $item->name }}</td>
+            <td style="font-weight: bold; text-align: left">{{ $item->name }}</td>
             <td>{{ $item->version }}</td>
             <td>{{ $item->client }}</td>
             <td>{{ $item->created_at }}</td>

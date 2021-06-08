@@ -48,6 +48,7 @@
 <table style="margin-top: 30px; width: 1300px">
     <tr bgcolor='#ccc'>
         <th>接口</th>
+        <th>状态</th>
         <th>版本</th>
         <th>平台</th>
         <th>时间</th>
@@ -57,12 +58,17 @@
 
     @foreach ($data as $item)
         <tr align="center">
-            <td style="font-weight: bold">{{ $item->url }}</td>
+            <td style="font-weight: bold; text-align: left">{{ $item->url }}</td>
+            @if ($item->code == 200)
+                <td style="color: green">{{ $item->code }}</td>
+            @else
+                <td style="color: red">{{ $item->code }}</td>
+            @endif
             <td>{{ $item->version }}</td>
             <td>{{ $item->client }}</td>
             <td>{{ $item->created_at }}</td>
             <td>{{ $item->imei }}</td>
-            <td><a href="/apiDetail/{{ $item->id }}">详情</a></td>
+            <td><a href="/apiDetail/{{ $item->id }}">详情查看</a></td>
         </tr>
     @endforeach
 </table>
