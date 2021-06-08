@@ -12,7 +12,7 @@ class ApiHistoryController extends Controller
 {
 
     public function index(Request $request, ApiHistoryService $service){
-        $imei = $request->input('imei', '');
+        $imei = $request->route('imei', '');
         $list = $service->index($imei);
         return view('api_list', ['data' => $list]);
     }

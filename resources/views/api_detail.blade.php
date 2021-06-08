@@ -46,7 +46,7 @@
     <span>返回结果: <span id="wrapper"></span></span>
 </p>
 
-
+{{--<span>原生数据: {{$detail->result}} </span>--}}
 <!-- <p>
 		<span>原生数据: {{$detail->result}} </span>
 	</p> -->
