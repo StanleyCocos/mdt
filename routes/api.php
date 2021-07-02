@@ -24,4 +24,5 @@ Route::group([
 ], function(){
     Route::post('event', 'EventController@store');
     Route::post('history', 'ApiHistoryController@store');
+    Route::post('test', 'ApiHistoryController@test');
 });
