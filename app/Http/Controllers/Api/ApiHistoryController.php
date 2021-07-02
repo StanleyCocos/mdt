@@ -18,9 +18,11 @@ class ApiHistoryController extends Controller
 
 
     public  function test(Request $request){
+        $ss = [];
         foreach ((array) $request->source_id as $source_id) {
-            echo $source_id;
+//            echo $source_id;
+            array_push($ss, $source_id);
         }
-        dd($request->all());
+        return $ss;
     }
 }
