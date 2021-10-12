@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'namespace' => 'App\Http\Controllers\Api',
 ], function(){
-    Route::post('event', 'EventController@store');
-    Route::post('history', 'ApiHistoryController@store');
-    Route::post('test', 'ApiHistoryController@test');
+    Route::post('event',  [Controllers\Api\EventController::class,'store']);
+    Route::post('history', [Controllers\Api\ApiHistoryController::class,'store']);
+    Route::post('apple_news', [Controllers\Api\AppleNewsController::class,'store']);
+    Route::post('test', [Controllers\Api\ApiHistoryController::class,'test']);
 });

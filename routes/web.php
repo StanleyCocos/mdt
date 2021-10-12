@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,17 @@ Route::get('/', function () {
 	return view('index');
 });
 
+Route::get('test', function () {
+    return "mdt test";
+});
+
 
 Route::group([
     'namespace' => 'App\Http\Controllers\Web',
 ], function (){
-    Route::get('event/{imei?}', 'EventController@index')->name('event.index');
-    Route::get('clear/{imei?}', 'EventController@clear');
-    Route::get('error/{imei?}', 'EventController@error');
-    Route::get('apiList/{imei?}', 'ApiHistoryController@index');
-    Route::get('apiDetail/{id}', 'ApiHistoryController@detail');
+    Route::get('event/{imei?}', [Controllers\Web\EventController::class,'index'])->name('event.index');
+    Route::get('clear/{imei?}', [Controllers\Web\EventController::class,'clear']);
+    Route::get('error/{imei?}', [Controllers\Web\EventController::class,'error']);
+    Route::get('apiList/{imei?}', [Controllers\Web\ApiHistoryController::class,'index']);
+    Route::get('apiDetail/{id}', [Controllers\Web\ApiHistoryController::class,'detail']);
 });
