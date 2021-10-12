@@ -7,10 +7,17 @@ use App\Models\AppleNews;
 class AppleNewsService{
 
     public function store($data){
-        $history = new AppleNews();
-        $history->title = $data['title'] ?? '';
-        $history->time = $data['time'] ?? '';
-        $history->save();
-        return $history;
+        $news = new AppleNews();
+        $news->title = $data['title'] ?? '';
+        $news->time = $data['time'] ?? '';
+        $news->save();
+        return $news;
+    }
+
+
+    public function exist($data){
+    	$title =  $data['title'] ?? '';
+    	$time =  $data['time'] ?? '';
+    	return AppleNews::where('time',$time)->exists();
     }
 }

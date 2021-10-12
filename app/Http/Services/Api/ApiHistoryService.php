@@ -22,6 +22,4 @@ class ApiHistoryService{
         return $history;
     }
 
-
-
 }
